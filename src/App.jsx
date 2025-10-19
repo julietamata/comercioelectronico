@@ -1,6 +1,15 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import imagen1 from '../src/assets/imagen1.jpg'
+import imagen2 from '../src/assets/imagen2.jpg'
+import imagen3 from '../src/assets/imagen3.jpg'
+import home from '../src/assets/home.svg'
+import buscar from '../src/assets/buscar.svg'
+import carrito from '../src/assets/carrito.svg'
+import favoritos from '../src/assets/favoritos.svg'
+import usuario from '../src/assets/usuario.svg'
+import Sidebar from "../src/paginas/sidebar.jsx";
 import './App.css'
 
 function App() {
@@ -10,60 +19,48 @@ function App() {
     <>
       
        <header class="navbar">
-    <div class="logo">Mi comercio electrónico</div>
+    <div class="logo"> JYS Fashion</div>
+
     <nav class="nav-links">
-      <a href="#">Inicio</a>
-      <a href="#">Carrito</a>
-      <a href="#">Favoritos</a>
-      <a href="#">Usuario</a>
-      <a href="#">Búsqueda</a>
+      <a href="#"> 
+      <img class='iconos' src={home} alt="Inicio" />
+      </a>
+      <a href="#"> 
+      <img class='iconos' src={carrito} alt="Carrito" />
+      </a>
+      <a href="#"> 
+      <img class='iconos' src={favoritos} alt="Favoritos" />
+      </a>
+      <a href="#"> 
+      <img class='iconos' src={usuario} alt="Usuario" />
+      </a>
+      <a href="#"> 
+      <img class='iconos' src={buscar} alt="Buscar" />
+      </a>
+
     </nav>
   </header>  
         
+      
       <div class="container">
     
-    <aside class="sidebar">
-      <h3>Categorías</h3>
-      <ul>
-        <li><a href="#">Categoría 1</a></li>
-        <li><a href="#">Categoría 2</a></li>
-        <li><a href="#">Categoría 3</a></li>
-        <li><a href="#">Categoría 4</a></li>
-        <li><a href="#">Categoría 5</a></li>
-      </ul>
-    </aside>
-
+    
+ 
+    <aside>
+        <Sidebar/>
+      </aside>
    
     <main class="main-content">
-      <h2>Productos por categoría </h2>
-      <div class="products">
-        <div class="product-card">
-          
-          <h4>Producto 1</h4>
-          <p>$25.00</p>
-          <button>Agregar al carrito</button>
-        </div>
-        <div class="product-card">
-          
-          <h4>Producto 2</h4>
-          <p>$40.00</p>
-          <button>Agregar al carrito</button>
-        </div>
-        <div class="product-card">
-          
-          <h4>Producto 3</h4>
-          <p>$15.00</p>
-          <button>Agregar al carrito</button>
-        </div>
+     
+    <div>
 
-        <div class="product-card">
-          
-          <h4>Producto 4</h4>
-          <p>$15.00</p>
-          <button>Agregar al carrito</button>
-        </div>
+      
+    <img class="imagenes" src={imagen1} alt="" />
+    <img class="imagenes" src={imagen2} alt="" />
+    <img class="imagenes" src={imagen3} alt="" />
+    </div>
 
-      </div>
+
     </main>
   </div>
       

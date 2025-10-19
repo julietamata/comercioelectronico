@@ -1,4 +1,5 @@
 :root {
+  
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -14,9 +15,14 @@
 }
 
 
+/* *{
+  margin: 0;
+  padding: 0;
+} */
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, sans-serif;
   background: #f5f6fa;
   color: #333;
@@ -27,14 +33,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2d3436;
+  background: #A52F63;
   color: white;
-  padding: 3px 10px;
+  padding: 2px 10px;
+  margin: 0;
+  height: 45px;
 }
 
 .navbar .logo {
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   font-weight: bold;
+  padding: 0;
+  
 }
 
 .navbar .nav-links a {
@@ -44,6 +56,11 @@ body {
   transition: color 0.3s;
 }
 
+.iconos{
+ 
+  height: 25px;
+}
+
 .navbar .nav-links a:hover {
   color: #00cec9;
 }
@@ -51,7 +68,7 @@ body {
 /* Contenedor principal */
 .container {
   display: flex;
-  margin: 20px;
+  margin: 10px;
 }
 
 /* Sidebar izquierdo */
@@ -129,4 +146,9 @@ body {
 
 .product-card button:hover {
   background: #74b9ff;
+}
+
+.imagenes{
+  width: 309x;
+  height: 400px;
 }
