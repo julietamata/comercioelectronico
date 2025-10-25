@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -13,29 +13,29 @@ function Sidebar() {
       <h3 onClick={() => toggleMenu("tops")}>Tops</h3>
       {activeMenu === "tops" && (
         <ul>
-          <li><a href="#">Blusas</a></li>
-          <li><a href="#">Chamarras</a></li>
-          <li><a href="#">Crochet</a></li>
-          <li><a href="#">Vestidos</a></li>
+          <li><Link to="/categoria/blusas">Blusas</Link></li>
+          <li><Link to="/categoria/chamarras">Chamarras</Link></li>
+          <li><Link to="/categoria/crochet">Crochet</Link></li>
+          <li><Link to="/categoria/vestidos">Vestidos</Link></li>
         </ul>
       )}
 
       <h3 onClick={() => toggleMenu("bottom")}>Bottom</h3>
       {activeMenu === "bottom" && (
         <ul>
-          <li><a href="#">Faldas</a></li>
-          <li><a href="#">Pantalones</a></li>
-          <li><a href="#">Shorts</a></li>
-          <li><a href="#">Jeans</a></li>
+          <li><Link to="/categoria/faldas">Faldas</Link></li>
+          <li><Link to="/categoria/pantalones">Pantalones</Link></li>
+          <li><Link to="/categoria/shorts">Shorts</Link></li>
+          <li><Link to="/categoria/jeans">Jeans</Link></li>
         </ul>
       )}
 
       <h3 onClick={() => toggleMenu("accesorios")}>Accesorios</h3>
       {activeMenu === "accesorios" && (
         <ul>
-          <li><a href="#">Bolsos</a></li>
-          <li><a href="#">Zapatos</a></li>
-          <li><a href="#">Bisutería</a></li>
+          <li><Link to="/categoria/bolsos">Bolsos</Link></li>
+          <li><Link to="/categoria/zapatos">Zapatos</Link></li>
+          <li><Link to="/categoria/bisuteria">Bisutería</Link></li>
         </ul>
       )}
     </div>

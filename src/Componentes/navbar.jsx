@@ -1,44 +1,37 @@
 import { Link } from "react-router-dom";
-import home from '../assets/home.svg'
-import buscar from '../assets/buscar.svg'
-import carrito from '../assets/carrito.svg'
-import favoritos from '../assets/favoritos.svg'
-import usuario from '../assets/usuario.svg'
-
+import home from '../assets/home.svg';
+import buscar from '../assets/buscar.svg';
+import carrito from '../assets/carrito.svg';
+import favoritos from '../assets/favoritos.svg';
+import usuario from '../assets/usuario.svg';
 
 function Navbar() {
   return (
-    <nav>
+    <header className="navbar">
+      <div className="logo">JYS Fashion</div>
 
+      <nav className="nav-links">
+        <Link to="/">
+          <img className="iconos" src={home} alt="Inicio" />
+        </Link>
 
-<header class="navbar">
-            <div class="logo"> JYS Fashion</div>
+        <Link to="/carrito">
+          <img className="iconos" src={carrito} alt="Carrito" />
+        </Link>
 
-            <nav class="nav-links">
-            <Link to={"/"}><a href="#"> 
-            <img class='iconos' src={home} alt="Inicio" />
-            </a></Link> |{" "}
-            
-            <a href="#"> 
-            <img class='iconos' src={carrito} alt="Carrito" />
-            </a>
-            <a href="#"> 
-            <img class='iconos' src={favoritos} alt="Favoritos" />
-            </a>
-            <a href="#"> 
-            <img class='iconos' src={usuario} alt="Usuario" />
-            </a>
-            <a href="#"> 
-            <img class='iconos' src={buscar} alt="Buscar" />
-            </a>
+        <Link to="/favoritos">
+          <img className="iconos" src={favoritos} alt="Favoritos" />
+        </Link>
 
-            </nav>
-        </header>  
+        <Link to="/usuario">
+          <img className="iconos" src={usuario} alt="Usuario" />
+        </Link>
 
-
-      
-      <Link to="/productos">Productos</Link>
-    </nav>
+        <Link to="/buscar">
+          <img className="iconos" src={buscar} alt="Buscar" />
+        </Link>
+      </nav>
+    </header>
   );
 }
 
