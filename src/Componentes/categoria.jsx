@@ -2,9 +2,11 @@ import imagen1 from '../assets/imagen1.jpg';
 import imagen2 from '../assets/imagen2.jpg';
 import imagen3 from '../assets/imagen3.jpg';
 import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 
 function Categoria() {
-  const { nombreCategoria } = useParams();  // ✅ Ahora sí está bien
+  const { nombreCategoria } = useParams();  
 
   const productos = [
     { id: 1, nombre: "Conjunto deportivo", precio: "$450", imagen: imagen1 },
@@ -21,7 +23,10 @@ function Categoria() {
             <img src={producto.imagen} alt={producto.nombre} className="producto-img" />
             <h3>{producto.nombre}</h3>
             <p>{producto.precio}</p>
-            <button className="btn-ver">Ver más</button>
+           <Link to={`/producto/${producto.id}`} className="btn-ver">
+            Ver más
+          </Link>
+
           </div>
         ))}
       </div>

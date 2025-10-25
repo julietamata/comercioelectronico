@@ -54,3 +54,30 @@
 .btn-ver:hover {
   background-color: #444;
 }
+
+.producto-detalle {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.producto-imagen img {
+  width: 350px;
+  border-radius: 8px;
+}
+
+.producto-info {
+  max-width: 400px;
+}
+
+.producto-precio {
+  font-size: 2rem;
+  color: #a30050;
+}
+
+.producto-botones button {
+  margin-right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #CFADC1;
+}
