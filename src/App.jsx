@@ -4,6 +4,7 @@ import Home from "./Componentes/home.jsx";
 import Categoria from "./Componentes/categoria.jsx";
 import Navbar from "./Componentes/navbar.jsx";
 import Producto from "./Componentes/Producto.jsx";
+import Carrito from "./Componentes/carrito.jsx";
 
 import Sidebar from "./Componentes/sidebar.jsx";
 import "./App.css";
@@ -20,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/categoria/:nombreCategoria" element={<Categoria />} />
           <Route path="/producto/:idProducto" element={<Producto />} />
-
+          <Route path="/carrito" element={<Carrito />} />
         </Routes>
       </div>
     </BrowserRouter>

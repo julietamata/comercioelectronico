@@ -3,7 +3,7 @@ import imagen1 from "../assets/imagen1.jpg";
 import imagen2 from "../assets/imagen2.jpg";
 import imagen3 from "../assets/imagen3.jpg";
 import { useContext } from "react";
-import { CarritoContext } from "../context/CarritoContext.jsx";
+import { CarritoContext } from "../Componentes/carritocontext.jsx";
 
 
 function Producto() {
