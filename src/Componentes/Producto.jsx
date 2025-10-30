@@ -2,8 +2,14 @@ import { useParams } from "react-router-dom";
 import imagen1 from "../assets/imagen1.jpg";
 import imagen2 from "../assets/imagen2.jpg";
 import imagen3 from "../assets/imagen3.jpg";
+import { useContext } from "react";
+import { CarritoContext } from "../context/CarritoContext.jsx";
+
 
 function Producto() {
+
+  const { agregarAlCarrito } = useContext(CarritoContext)
+  
   const { idProducto } = useParams();
 
   // Simulación de productos (más adelante esto vendrá de una API o base de datos)
@@ -41,7 +47,16 @@ function Producto() {
         </select>
 
         <div className="producto-botones">
-          <button className="btn-carrito">Agregar al carrito</button>
+          
+          <button
+            className="btn-carrito"
+            onClick={() => agregarAlCarrito(producto)}>
+            
+            Agregar al carrito
+          
+          </button>
+
+
           <button className="btn-favoritos">Agregar a favoritos ❤️</button>
         </div>
       </div>
