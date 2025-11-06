@@ -1,8 +1,17 @@
 import { useContext, useState, useEffect } from "react";
 import { CarritoContext } from "../Componentes/carritocontext.jsx";
 import "../index.css";
+import { useNavigate } from "react-router-dom";
+
+
+
+
 
 function Carrito() {
+
+  const navigate = useNavigate();
+
+
   const { carrito, eliminarDelCarrito } = useContext(CarritoContext);
   const [mensaje, setMensaje] = useState("");
   const [visible, setVisible] = useState(false);
@@ -57,10 +66,20 @@ function Carrito() {
           ))}
           <hr />
           <h2>Total: ${total}</h2>
+
+          <button
+            className="btn-enviar"
+            onClick={() => navigate("/envio")}
+            disabled={carrito.length === 0}
+          >
+            🚚 Ir a dirección de envío
+          </button>
+
+
         </div>
       )}
 
-      {/* Notificación flotante */}
+          {/* Notificación flotante */}
       <div className={`notificacion ${visible ? "mostrar" : ""} ${tipo}`}>
         {mensaje}
       </div>

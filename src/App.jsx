@@ -5,6 +5,7 @@ import Categoria from "./Componentes/categoria.jsx";
 import Navbar from "./Componentes/navbar.jsx";
 import Producto from "./Componentes/Producto.jsx";
 import Carrito from "./Componentes/carrito.jsx";
+import Envio from "./Componentes/Envio.jsx"
 
 import Sidebar from "./Componentes/sidebar.jsx";
 import "./App.css";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/categoria/:nombreCategoria" element={<Categoria />} />
           <Route path="/producto/:idProducto" element={<Producto />} />
           <Route path="/carrito" element={<Carrito />} />
+          <Route path="/envio" element={<Envio />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -17,7 +17,6 @@ export function CarritoProvider({ children }) {
     console.log("carrito actualizado:", nuevoCarrito);
   };
 
- 
   return (
     <CarritoContext.Provider
       value={{ carrito, agregarAlCarrito, eliminarDelCarrito }}
@@ -26,4 +25,3 @@ export function CarritoProvider({ children }) {
     </CarritoContext.Provider>
   );
 }
-
