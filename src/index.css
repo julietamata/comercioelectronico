@@ -152,3 +152,45 @@ body {
   width: 309x;
   height: 400px;
 }
+
+.notificacion {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1000;
+}
+
+.notificacion.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notificacion.exito {
+  background-color: #2ecc71; /* verde */
+}
+
+.notificacion.error {
+  background-color: #e74c3c; /* rojo */
+}
+
+
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

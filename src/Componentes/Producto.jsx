@@ -2,30 +2,66 @@ import { useParams } from "react-router-dom";
 import imagen1 from "../assets/imagen1.jpg";
 import imagen2 from "../assets/imagen2.jpg";
 import imagen3 from "../assets/imagen3.jpg";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CarritoContext } from "../Componentes/carritocontext.jsx";
-
+import "../index.css"; // asegúrate de tener el CSS del toast aquí
 
 function Producto() {
-
-  const { agregarAlCarrito } = useContext(CarritoContext)
-  
+  const { agregarAlCarrito } = useContext(CarritoContext);
   const { idProducto } = useParams();
 
-  // Simulación de productos (más adelante esto vendrá de una API o base de datos)
+  const [mensaje, setMensaje] = useState("");
+  const [visible, setVisible] = useState(false);
+  const [tipo, setTipo] = useState(""); // exito o error
+
+  const mostrarNotificacion = (texto, tipoNoti) => {
+    setMensaje(texto);
+    setTipo(tipoNoti);
+    setVisible(true);
+  };
+
+  useEffect(() => {
+    if (visible) {
+      const timer = setTimeout(() => setVisible(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [visible]);
+
+  // Simulación de productos
   const productos = [
-    { id: 1, nombre: "Conjunto deportivo", precio: "$450", descripcion: "Conjunto cómodo y casual para cualquier ocasión.", imagen: imagen1 },
-    { id: 2, nombre: "Blusa roja", precio: "$220", descripcion: "Blusa elegante para eventos casuales o formales.", imagen: imagen2 },
-    { id: 3, nombre: "Abrigo blanco", precio: "$799", descripcion: "Abrigo para invierno con diseño moderno.", imagen: imagen3 },
+    {
+      id: 1,
+      nombre: "Conjunto deportivo",
+      precio: "$450",
+      descripcion: "Conjunto cómodo y casual para cualquier ocasión.",
+      imagen: imagen1,
+    },
+    {
+      id: 2,
+      nombre: "Blusa roja",
+      precio: "$220",
+      descripcion: "Blusa elegante para eventos casuales o formales.",
+      imagen: imagen2,
+    },
+    {
+      id: 3,
+      nombre: "Abrigo blanco",
+      precio: "$799",
+      descripcion: "Abrigo para invierno con diseño moderno.",
+      imagen: imagen3,
+    },
   ];
 
-  // Encontrar producto según el ID
   const producto = productos.find((p) => p.id == idProducto);
 
-  // Si no existe producto
   if (!producto) {
     return <h2>Producto no encontrado</h2>;
   }
+
+  const handleAgregar = () => {
+    agregarAlCarrito(producto);
+    mostrarNotificacion(`"${producto.nombre}" fue agregado al carrito.`, "exito");
+  };
 
   return (
     <div className="producto-detalle">
@@ -47,18 +83,16 @@ function Producto() {
         </select>
 
         <div className="producto-botones">
-          
-          <button
-            className="btn-carrito"
-            onClick={() => agregarAlCarrito(producto)}>
-            
-            Agregar al carrito
-          
+          <button className="btn-carrito" onClick={handleAgregar}>
+            🛒 Agregar al carrito
           </button>
-
-
           <button className="btn-favoritos">Agregar a favoritos ❤️</button>
         </div>
+      </div>
+
+      {/* Notificación flotante */}
+      <div className={`notificacion ${visible ? "mostrar" : ""} ${tipo}`}>
+        {mensaje}
       </div>
     </div>
   );
