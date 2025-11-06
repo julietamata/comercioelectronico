@@ -5,7 +5,10 @@ import Categoria from "./Componentes/categoria.jsx";
 import Navbar from "./Componentes/navbar.jsx";
 import Producto from "./Componentes/Producto.jsx";
 import Carrito from "./Componentes/carrito.jsx";
-import Envio from "./Componentes/Envio.jsx"
+import Envio from "./Componentes/Envio.jsx";
+import Pago from "./Componentes/Pago.jsx";
+import Confirmacion from "./Componentes/Confirmacion.jsx";
+
 
 import Sidebar from "./Componentes/sidebar.jsx";
 import "./App.css";
@@ -24,6 +27,9 @@ function App() {
           <Route path="/producto/:idProducto" element={<Producto />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/envio" element={<Envio />} />
+          <Route path="/pago" element={<Pago />} />
+          <Route path="/confirmacion" element={<Confirmacion />} />
+
         </Routes>
       </div>
     </BrowserRouter>

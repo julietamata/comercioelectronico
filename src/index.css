@@ -281,3 +281,109 @@ body {
 .btn-confirmar:hover {
   background-color: #43a047;
 }
+
+
+.pago-contenedor {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.pago-formulario label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.pago-formulario input,
+.pago-formulario select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.tarjeta-fila {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-confirmar {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background-color: #ff7b00;
+  border: none;
+  color: white;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-confirmar:hover {
+  background-color: #ff9a3d;
+}
+
+
+.confirmacion-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: #f7f7f7;
+  font-family: "Poppins", sans-serif;
+}
+
+.confirmacion-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 450px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: aparecer 0.8s ease;
+}
+
+.confirmacion-card h1 {
+  color: #ff7b00;
+  margin-bottom: 10px;
+}
+
+.confirmacion-card p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.confirmacion-icono {
+  font-size: 60px;
+  margin: 20px 0;
+  color: #4CAF50;
+}
+
+.btn-volver {
+  background-color: #ff7b00;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-volver:hover {
+  background-color: #ff9a3d;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
