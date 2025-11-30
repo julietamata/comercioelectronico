@@ -1,17 +1,31 @@
+/* ----------------------------------------
+   RESET + ROOT
+---------------------------------------- */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------
+   LOGO
+---------------------------------------- */
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
   transition: filter 300ms;
 }
 
+/* ----------------------------------------
+   HOME / CATEGORÍAS
+---------------------------------------- */
 .categoria-container {
   padding: 20px;
   text-align: center;
@@ -24,85 +38,416 @@
   flex-wrap: wrap;
 }
 
-.producto-card {
+.producto-card-home {
   width: 200px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px;
   transition: 0.3s;
+  background: white;
+  overflow: hidden;
 }
 
-.producto-card:hover {
-  box-shadow: 0px 0px 10px #aaa;
+.producto-card-home:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 5px 18px rgba(0,0,0,0.15);
 }
 
 .producto-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .btn-ver {
-  background-color: #000;
+  background: #000;
   color: white;
   padding: 8px;
-  margin-top: 5px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
 .btn-ver:hover {
-  background-color: #444;
+  background: #444;
 }
 
-.producto-detalle {
+/* ----------------------------------------
+   DETALLE DE PRODUCTO (PRODUCTO.JSX)
+---------------------------------------- */
+.product-page {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.producto-card {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 900px;
+  max-width: 95%;
 }
 
 .producto-imagen img {
   width: 350px;
-  border-radius: 8px;
+  height: 450px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .producto-info {
-  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.producto-info h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
 }
 
 .producto-precio {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #a30050;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.producto-botones button {
-  margin-right: 10px;
-  padding: 10px;
+.producto-descripcion {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.producto-label {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.producto-select {
+  margin-left: 10px;
+  padding: 6px;
+}
+
+.producto-botones {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-carrito {
+  background: #a30050;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
   cursor: pointer;
-  background-color: #CFADC1;
+  border: none;
+}
 
+.btn-carrito:hover {
+  background: #7a003a;
+}
+
+.btn-favoritos {
+  background: #CFADC1;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-favoritos:hover {
+  background: #b891a5;
+}
+
+/* ----------------------------------------
+   NOTIFICACIÓN
+---------------------------------------- */
+.notificacion {
+  position: fixed;
+  bottom: -60px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.notificacion.mostrar {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.notificacion.exito {
+  background-color: #28a745;
+}
+
+.notificacion.error {
+  background-color: #dc3545;
+}
+
+/* ----------------------------------------
+   RESPONSIVE
+---------------------------------------- */
+@media (max-width: 768px) {
+  .producto-card {
+    flex-direction: column;
+    width: 95%;
+    padding: 20px;
+  }
+
+  .producto-imagen img {
+    width: 100%;
+    height: auto;
+  }
+
+  .producto-botones {
+    flex-direction: column;
+  }
 }
 
 
-.carrito-item {
+
+
+
+
+
+
+/* ===========================
+   ESTILOS DE LOGIN / REGISTRO
+   =========================== */
+
+.usuario-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background: #f5f6fa;
+  padding: 20px;
+}
+
+.usuario-card {
+  background: white;
+  padding: 35px 40px;
+  border-radius: 15px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.usuario-card h2 {
+  margin-bottom: 20px;
+  color: #A52F63;
+}
+
+.usuario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.usuario-form label {
+  font-weight: 600;
+  text-align: left;
+}
+
+.usuario-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.usuario-btn {
+  margin-top: 15px;
+  background: #A52F63;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.usuario-btn:hover {
+  background: #872652;
+}
+
+.usuario-link {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.usuario-link a {
+  color: #A52F63;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.usuario-link a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/* =========================== */
+/*   Categoría  */
+/* =========================== */
+
+.categoria-grid-page {
+  padding: 30px 20px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.categoria-grid-titulo {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* GRID RESPONSIVO */
+.categoria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* TARJETAS */
+.categoria-grid-item {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.categoria-grid-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* IMAGEN */
+.categoria-grid-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* INFO */
+.categoria-grid-info {
+  padding: 15px 18px;
+}
+
+.categoria-grid-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.precio {
+  margin-top: 6px;
+  font-weight: bold;
+  color: #7a0035;
+}
+
+/* BOTÓN */
+.categoria-grid-btn {
+  display: block;
+  margin: 10px auto 18px;
+  text-align: center;
+  width: 80%;
+  padding: 10px 0;
+  border-radius: 8px;
+  background: #9d0045;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.categoria-grid-btn:hover {
+  background: #7a0035;
+}
+
+
+
+
+
+/* ❤️ Botón de favoritos */
+.favorito-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1rem;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: transform .2s ease;
 }
 
-.btn-eliminar {
-  background-color: #ff4d4d;
-  color: white;
+.favorito-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Necesario para posición absoluta */
+.categoria-grid-item {
+  position: relative;
+}
+
+
+
+
+
+/* ---- BARRA DE BÚSQUEDA EXPANDIBLE ---- */
+
+.btn-buscar {
+  background: none;
   border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
   cursor: pointer;
-}
-.btn-eliminar:hover {
-  background-color: #e63b3b;
+  padding: 0;
 }
 
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
+.search-input {
+  width: 0px;
+  opacity: 0;
+  padding: 6px 10px;
+  margin-left: 10px;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  font-size: 14px;
+
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.search-input.activo {
+  width: 160px;
+  opacity: 1;
+}
